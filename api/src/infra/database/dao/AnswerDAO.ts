@@ -1,7 +1,7 @@
 import {
   KnexTypeAdapter,
   DatabaseTableNames,
-} from "@infra/database/KnexAdpter";
+} from "@infra/database/KnexAdapter";
 import { AnswerModel } from "@domain/model";
 import DAO from "@domain/dao/DAO";
 
@@ -24,5 +24,11 @@ export default class AnswerDAO implements DAO<AnswerModel> {
       .first();
     if (!data) return null;
     return data;
+  }
+
+  async list(questionId: string): Promise<AnswerModel[]> {
+    return await this.connection<AnswerModel>(this.tableName).where({
+      questionId,
+    });
   }
 }

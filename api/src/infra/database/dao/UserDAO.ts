@@ -1,4 +1,7 @@
-import { KnexTypeAdapter, DatabaseTableNames } from "../KnexAdpter";
+import {
+  KnexTypeAdapter,
+  DatabaseTableNames,
+} from "@infra/database/KnexAdapter";
 import { UserModel } from "@domain/model";
 import DAO from "@domain/dao/DAO";
 

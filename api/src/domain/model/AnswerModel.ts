@@ -4,5 +4,5 @@ export interface AnswerModel {
   userId: string | null;
   answer: string;
   createdAt: Date;
-  updatdAt: Date | null;
+  updatedAt: Date | null;
 }
